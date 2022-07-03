@@ -6,65 +6,73 @@ function boton(msg, bot){
             return replyMarkup=[
                 [
                     // Boton Primera Fila
-                    bot.inlineButton('📋Mostrar Productos📋', {callback: '/show'}),
-                    bot.inlineButton('Horario\nDelivery⏰🛵', {callback: "/zona"})
+                    bot.inlineButton('📦 Mostrar productos', {callback: '/show'}),
+                    bot.inlineButton('Métodos de pago 💳', {callback: "/pago"})
                 ],
         
                 [
                     // Boton segunda Fila
-                    bot.inlineButton('💸Metodos de Pago💸', {callback: '/pago'})
+                    bot.inlineButton('⏰ Horario de trabajo | Zonas de delivery 🛵', {callback: '/zona'})
                 ],
             ];
         case '/show':
             return replyMarkup=[
                 [
                     // Boton Primera Fila
-                    bot.inlineButton('🔍Buscar Productos🔍', {callback: '/search'}),
-                    bot.inlineButton('🛒Agregar Al carrito🛒', {callback: "/add"})
+                    bot.inlineButton('🔍 Buscar Productos', {callback: '/search'}),
+                    bot.inlineButton('Agregar al carrito 🛒', {callback: "/add"})
                 ],
         
                 [
                     // Boton segunda Fila
-                    bot.inlineButton('🛒Consultar carrito🛒', {callback: '/view'}),
-                    bot.inlineButton('💸Metodos de Pago💸', {callback: '/pago'})
+                    bot.inlineButton('🛒 Consultar carrito', {callback: '/view'}),
+                    bot.inlineButton('Métodos de pago 💸', {callback: '/pago'})
                 ],
 
                 [
-                    bot.inlineButton('🔙Volver al Menu Principal🔙', {callback: '/back'})
+                    bot.inlineButton('Volver al menú principal', {callback: '/back'})
                 ]
             ];
         case '/zona':
+            return replyMarkup = [
+                [
+                    bot.inlineButton('Ciudad Chinita', {callback : '/map1'}),
+                    bot.inlineButton('Galerías Mall', {callback : '/map2'}),
+                    bot.inlineButton('Metro Sol', {callback : '/map3'})
+                ],
+            ];
+
         case '/pago':
             return replyMarkup=[
                 [
                     // Boton Primera Fila
-                    bot.inlineButton('🔍Buscar Productos🔍', {callback: '/search'}),
-                    bot.inlineButton('🧾Generar Factura🧾', {callback: "/fact"})
+                    bot.inlineButton('💵  Efectivo', {callback: '/efectivo'}),
+                    bot.inlineButton('Transferencias 💸', {callback: "/transfe"})
                 ],
         
                 [
                     // Boton segunda Fila
-                    bot.inlineButton('🛒Consultar carrito🛒', {callback: '/pago'})
+                    bot.inlineButton('💰 Cryptos ( BTC | ETH | USDT )', {callback: '/criptos'})
                 ],
 
                 [
-                    bot.inlineButton('🔙Volver al Menu Principal🔙', {callback: '/back'})
+                    bot.inlineButton('Volver al menú principal', {callback: '/back'})
                 ]
             ];
         case '/fact':
             return replyMarkup=[
                 [
-                    bot.inlineButton('🔙Volver al menu Principal🔙', {callback: '/back'})
+                    bot.inlineButton('Volver al ménu principal', {callback: '/back'})
                 ]
             ]
         case '/view':
             return replyMarkup=[
                 [
-                    bot.inlineButton('🧾Generar factura🧾', {callback: '/fact'}),
-                    bot.inlineButton('🛒Añadir al Carrito🛒', {callback: '/add'})
+                    bot.inlineButton('🧾 Generar factura', {callback: '/fact'}),
+                    bot.inlineButton('Añadir al carrito 🛒', {callback: '/add'})
                 ],
                 [
-                    bot.inlineButton('🔙Volver al menu Principal🔙', {callback: '/back'})
+                    bot.inlineButton('Volver al ménu principal', {callback: '/back'})
                 ]
             ]
         case '/add':
@@ -74,7 +82,7 @@ function boton(msg, bot){
                     bot.inlineButton('🛒Añadir otro producto🛒', {callback: '/add'})
                 ],
                 [
-                    bot.inlineButton('🔙Volver al menu Principal🔙', {callback: '/back'})
+                    bot.inlineButton('Volver al ménu principal', {callback: '/back'})
                 ]
             ]
         case '/search':
@@ -84,7 +92,7 @@ function boton(msg, bot){
                     bot.inlineButton('🛒Añadir al carrito🛒', {callback: '/add'})
                 ],
                 [
-                    bot.inlineButton('🔙Volver al menu Principal🔙', {callback: '/back'})
+                    bot.inlineButton('Volver al ménu principal', {callback: '/back'})
                 ]
             ]
     }
