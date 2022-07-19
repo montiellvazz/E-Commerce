@@ -1,6 +1,6 @@
 const instance = require("@utils/utils");
 const boton = require("./buttons");
-const showProductsMessage = require("@utils/productsMessage")
+const showProductsMessage = require("@utils/productsMessage");
 async function getTrolley(msg,bot){
     let id = msg.from.id;
     let name = msg.from.first_name || msg.from.username;

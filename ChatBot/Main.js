@@ -7,8 +7,8 @@ const fetchProduct = require("@mod/ask_busqueda");
 const pushProduct = require("@mod/ask_push");
 const emptyTrolley = require("@mod/empty_trolley");
 require('dotenv').config();
-let boton=require('@mod/buttons');
-
+let boton = require('@mod/buttons');
+const getInvoice = require('@mod/get_invoice');
 
 const bot = new TeleBot({
     token:process.env.TOKEN,
@@ -94,6 +94,15 @@ const bot = new TeleBot({
     })
 
     //-------------------------------------- Enviar mapas
+    bot.on('/fact', (msg) => {
+        getInvoice(msg,bot);
+    })
+
+    bot.on('successfulPayment', (msg) => {
+        console.log('successfulPayment', msg);
+        return bot.sendMessage(msg.from.id, `Gracias por tu compra, ${msg.from.first_name}!`);
+    
+    });
 
     bot.on('/zona',msg=>{
         let replyMarkup=boton(msg.data,bot);
