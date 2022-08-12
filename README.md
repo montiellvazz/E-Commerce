@@ -3,7 +3,7 @@
 ## Acerca del proyecto:
 
 
-Se trata de crear una herramienta que permita una fácil e intuitiva interacción para sus usuarios, como lo es un chat de Telegram, e implementar en esta las funcionalidades de un E - Commerce.
+Se trata de crear una herramienta que permita una fácil e intuitiva interacción para sus usuarios, como lo es un chat de Telegram, e implementar en esta las funcionalidades de un E - Commerce bajo el concepto de Serverless, aplicando Netlify functions y consumo de APIs con Axios.
 
 ![chatbot](https://media2.giphy.com/media/HAUxypcipk4AvnHdp0/giphy.gif?cid=790b761137149780356bd74a9c33a890b8b9cf5ba9474fbd&rid=giphy.gif&ct=g)
 
